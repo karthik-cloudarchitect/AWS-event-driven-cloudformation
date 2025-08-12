@@ -1,3 +1,30 @@
+"""
+AWS Lambda Function: Event Producer
+===================================
+
+This Lambda function acts as an event producer in an event-driven architecture.
+It receives requests, validates data, and publishes messages to SQS for processing.
+
+Key Features:
+- Message validation and formatting
+- SQS integration for reliable message delivery
+- Error handling and retry logic
+- CloudWatch logging for monitoring
+- Dead letter queue support for failed messages
+
+Environment Variables:
+- QUEUE_URL: SQS queue URL for message publishing
+
+Event Flow:
+1. Receive incoming event/request
+2. Validate and format message payload
+3. Publish message to SQS queue
+4. Return success/failure response
+
+Version: 2.0
+Last Updated: $(date +'%Y-%m-%d')
+"""
+
 import json
 import boto3
 import os
